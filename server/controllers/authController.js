@@ -14,9 +14,11 @@ exports.register = async (req, res, next) => {
 			password,
 			role
 		})
+		
 
 		sendTokenResponse(user, 200, res)
 	} catch (err) {
+		console.log(err)
 		res.status(400).json({ success: false, message: err })
 	}
 }
